@@ -1,34 +1,175 @@
-# Skills für die Praxis im Verwaltungsrecht
+# Fachanwalt Verwaltungsrecht
 
-Claude-Skills für die anwaltliche Arbeit im allgemeinen Verwaltungsrecht und
-Verwaltungsprozessrecht (Fachanwalt für Verwaltungsrecht, § 8 FAO).
+<!-- BEGIN direkt-loslegen (autogen) -->
+## Was ist das hier?
 
-| Skill | Wofür |
-|---|---|
-| [`fristen-verwaltungsrecht`](skills/fristen-verwaltungsrecht/SKILL.md) | Bekanntgabe, Widerspruchs- und Klagefristen, Jahresfrist, Wiedereinsetzung, Fristberechnung |
-| [`rechtsbehelf-pruefung`](skills/rechtsbehelf-pruefung/SKILL.md) | Statthafter Rechtsbehelf, Vorverfahren, Zulässigkeit und Begründetheit der Klage |
-| [`eilrechtsschutz`](skills/eilrechtsschutz/SKILL.md) | §§ 80, 80a, 123 VwGO: Antragsart, Prüfprogramm, Glaubhaftmachung |
-| [`ermessen-und-verfahrensfehler`](skills/ermessen-und-verfahrensfehler/SKILL.md) | Ermessensfehler, Anhörung, Begründung, Heilung und Unbeachtlichkeit (§§ 28, 39, 40, 45, 46 VwVfG) |
-| [`schriftsatz-verwaltungsgericht`](skills/schriftsatz-verwaltungsgericht/SKILL.md) | Aufbau von Klage, Eilantrag und Widerspruch; beA-Einreichung; Streitwert |
-| [`rechtsmittel-vwgo`](skills/rechtsmittel-vwgo/SKILL.md) | Antrag auf Zulassung der Berufung, Beschwerde nach § 146 VwGO, Fristen und Darlegungsanforderungen |
+Plugin Fachanwalt für Verwaltungsrecht. VwGO VwVfG. Anfechtungs- und Verpflichtungsklage Eilrechtsschutz Paragraf 80 Abs 5 VwGO einstweilige Anordnung Normenkontrolle Polizei- und Ordnungsrecht. Schnittstelle Plugin kanzlei-allgemein.
 
-## Grundsätze für alle Skills
+Dieses Plugin gehört zum Marketplace mit 315 Plugins. Für die Installation nimm das Einzel-ZIP. Ohne Installation genügt zum Einstieg einer der beiden eigenständigen Markdown-Prompts: Schnellstart für den Kernvorgang, Werkstatt für die ausführliche Bearbeitung. Die Prompts ersetzen nicht sämtliche Spezialskills und Hilfsdateien des Plugins.
 
-1. **Normtext prüfen, nicht zitieren aus dem Gedächtnis.** Vor jeder Aussage zu
-   einer Frist oder einem Tatbestandsmerkmal wird der aktuelle Text geholt
-   (Bund: gesetze-im-internet.de; Länder: das jeweilige Landesportal).
-2. **Landesrecht beachten.** Vorverfahren, Verwaltungsverfahrensgesetze der Länder
-   und Ausführungsgesetze zur VwGO weichen ab. Das Bundesland wird immer erfragt.
-3. **Keine erfundenen Fundstellen.** Rechtsprechung wird nur mit Gericht, Datum
-   und Aktenzeichen genannt, wenn sie tatsächlich geprüft wurde. Andernfalls ist
-   offen zu kennzeichnen: „Rechtsprechungsnachweis noch zu recherchieren“.
-4. **Fristen konservativ.** Im Zweifel gilt das frühere mögliche Fristende. Jede
-   Fristberechnung wird mit allen Rechenschritten gezeigt.
-5. **Arbeitshilfe, keine Mandatsentscheidung.** Die Ergebnisse unterstützen die
-   anwaltliche Prüfung, ersetzen sie aber nicht.
+## Welche Datei wofür? / Which file should I use?
 
-## Installation
+| Bestandteil | Deutsch | English | Wo? / Where? |
+| --- | --- | --- | --- |
+| Plugin-ZIP | Installiert das vollständige Plugin mit Skills, Referenzen und Hilfsdateien. | Installs the complete plugin with its skills, references and supporting files. | [`fachanwalt-verwaltungsrecht.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/paketpflege-20261122-v445.36.9/fachanwalt-verwaltungsrecht.zip) |
+| Skills | Arbeitsabläufe für einzelne Aufgaben. Wähle bei einem klaren Auftrag den passenden Skill ausdrücklich; die automatische Auswahl ist nicht garantiert. Einzeldownloads enthalten nur die jeweilige Markdown-Datei. | Focused task workflows. Select a known skill explicitly; automatic selection is not guaranteed. An individual download contains only that Markdown file. | [Skill-Liste öffnen / Open skill list](../skills-index/fachanwalt-verwaltungsrecht.md) |
+| Werkstatt-Prompt | Ausführliche eigenständige Markdown-Datei für komplexe oder mehrstufige Vorgänge. Sie ist kein Skill und nicht im Plugin-ZIP enthalten. | Detailed standalone Markdown file for complex or multi-step matters. It is not a skill and is not included in the plugin ZIP. | [MD herunterladen / Download MD](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/fachanwalt-verwaltungsrecht-werkstatt.md) |
+| Schnellstart / Mini-Prompt | Kompakte eigenständige Markdown-Datei für einen schnellen ersten Arbeitsstand. Sie ist kein Skill und nicht im Plugin-ZIP enthalten. | Compact standalone Markdown file for a fast first work product. It is not a skill and is not included in the plugin ZIP. | [MD herunterladen / Download MD](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/fachanwalt-verwaltungsrecht-schnellstart.md) |
+| Schwerpunkt-Prompt | Eigenständiger, eng abgegrenzter Mandatsauftrag bis 7500 Zeichen. Der zugehörige Fachskill ist auch im Plugin vorhanden. | Standalone workflow for one demanding practice problem, up to 7500 characters. Its corresponding skill is also part of the plugin. | <a href="https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/fachanwalt-verwaltungsrecht-hauptproblem.md" download>MD herunterladen / Download MD</a> |
+| Testakten | Separate Übungsunterlagen in PDF- und Originalformaten; sie werden nicht mit dem Plugin installiert. | Separate practice files in PDF and original formats; they are not installed with the plugin. | [Testakten-Übersicht / Test-file index](../testakten/README.md) |
 
-Jeden Ordner unter `skills/` nach `~/.claude/skills/` (persönlich) oder
-`.claude/skills/` (projektbezogen) kopieren, oder als ZIP in claude.ai unter
-Einstellungen → Skills hochladen.
+Links mit „MD herunterladen / Download MD“ starten einen Dateidownload. Navigationslinks zu README- und Übersichtsseiten bleiben dagegen als GitHub-Seiten geöffnet.
+
+Links labelled “MD herunterladen / Download MD” start a file download. Navigation links to README and index pages remain normal GitHub pages.
+
+Die Skill-Liste bildet den Quellbestand ab. Im installierten Paket werden umfangreiche Spezialserien teilweise über einen Fachrouter bei Bedarf geladen und erscheinen dann nicht als eigene auswählbare Skills. Beim manuellen Einsatz eines einzelnen Skills müssen zusätzlich benötigte Referenzen oder Werkzeuge verfügbar sein.
+
+The skill index lists the source collection. In the installed package, some specialist series are accessed through a topic router rather than separate menu entries. A standalone skill may need additional reference files or tools. Choose one entry point, then add only what the matter requires.
+
+Direktnavigation: [30-Sekunden-Start](#in-30-sekunden-starten) · [Startseite](../README.md) · [Plugin-Katalog](../README.md#was-ist-drin) · [Skill-Gesamtübersicht](../SKILLS.md) · [Skills dieses Plugins](../skills-index/fachanwalt-verwaltungsrecht.md) · [Plugin-Dateien](.) · [Download-Index](../ASSET_INDEX.md) · [Installation](../INSTALLATION_EINFACH.md) · [Testakten](../testakten/README.md)
+
+## In 30 Sekunden starten
+
+| Ausgangslage | Schnellster Weg |
+| --- | --- |
+| Plugin installiert | Passenden Fachskill in der [alphabetisch sortierten Skill-Liste](../skills-index/fachanwalt-verwaltungsrecht.md) wählen und den untenstehenden Startsatz mit dem Arbeitsordner absenden. |
+| Noch keine Installation | Den Schnellstart unten als Markdown herunterladen und mit den Unterlagen in einer freigegebenen Arbeitsoberfläche bereitstellen. |
+| Umfangreicher oder mehrstufiger Vorgang | Die Werkstatt laden; sie führt tiefer durch Fachrouten, Gegenposition und Endprodukt. |
+
+Startsatz für Fachanwalt Verwaltungsrecht:
+
+> Sichte den ausgewählten Ordner intern, ohne seine Inhalte ungefragt aufzulisten. Lies die für den Auftrag tragenden Unterlagen; ergänze die Lektüre gezielt bei offenen Belegfragen. Beginne mit folgendem Arbeitsschritt: einen fachbezogenen Erststand mit Ergebnisrichtung, Kernbeleg und nächstem Dokument. Wenn bereits ein konkretes Dokument verlangt ist, beginne unmittelbar damit. Frage gezielt nach entscheidenden offenen Punkten und arbeite an den unabhängigen Teilen weiter. Verarbeite die Antwort im bestehenden Entwurf; weitere Rückfragen nur bei neuen entscheidenden Lücken.
+
+Bei einem Folgewunsch den bisherigen Aktenstand fortführen. Bereits festgestellte Tatsachen, Berechnungen und Quellen nicht erneut abfragen oder ohne Anlass neu aufbauen.
+
+## Downloads
+
+| Was | Format | Direkt-Download |
+| --- | --- | --- |
+| Plugin als Komplett-ZIP (Hauptweg) | ZIP | [`fachanwalt-verwaltungsrecht.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/paketpflege-20261122-v445.36.9/fachanwalt-verwaltungsrecht.zip) |
+| Kompakter Prompt (Schnellstart) | Markdown | [`fachanwalt-verwaltungsrecht-schnellstart.md`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/fachanwalt-verwaltungsrecht-schnellstart.md) |
+| Großer Prompt (Werkstatt) | Markdown | [`fachanwalt-verwaltungsrecht-werkstatt.md`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/fachanwalt-verwaltungsrecht-werkstatt.md) |
+| Schwerpunkt-Prompt (Hauptproblem) | Markdown | <a href="https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/fachanwalt-verwaltungsrecht-hauptproblem.md" download>fachanwalt-verwaltungsrecht-hauptproblem.md</a> |
+| Zugeordnete Testakten | PDF / ZIP | [11 zugeordnete Akten](#zugeordnete-testakten) mit Gesamt-PDF, Originaldateien und Einzel-PDFs |
+
+> Marketplace-Hinweis: Dieses Plugin gehört zum Marketplace mit 315 Plugins. Das Sammelpaket [`alle-plugins-megazip.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/latest/download/alle-plugins-megazip.zip) enthält seinen veröffentlichten Stand, nicht zwingend spätere Einzelpakete. Alle Einzeldateien stehen im [Download-Index](../ASSET_INDEX.md); Werkstatt und Schnellstart bleiben direkte Markdown-Downloads.
+
+## Zugeordnete Testakten
+
+Jede Akte ist getrennt als lesbares Gesamt-PDF, ZIP mit Originaldateien und ZIP mit einzelnen PDFs erreichbar.
+
+> Diese Testakte wurde mit KI generiert und ist ein Experiment. Benutzung auf eigene Verantwortung und eigene Gefahr.
+>
+> This test case file was generated with AI and is an experiment. Use at your own responsibility and risk.
+
+| Akte | Gesamt-PDF | Originaldateien | Einzel-PDFs |
+| --- | --- | --- | --- |
+| [Auslandseinsatz Mexiko - Wasserbau, Laufbahn und Besoldung](../testakten/beamtenrecht-auslandseinsatz-mexiko-wasserbau-besoldung/README.md) | [Gesamt-PDF](../testakten/beamtenrecht-auslandseinsatz-mexiko-wasserbau-besoldung/gesamt-pdf/beamtenrecht-auslandseinsatz-mexiko-wasserbau-besoldung_gesamt.pdf) | [`testakte-beamtenrecht-auslandseinsatz-mexiko-wasserbau-besoldung.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/grundakten-pflegerecht-v1.0.0/testakte-beamtenrecht-auslandseinsatz-mexiko-wasserbau-besoldung.zip) | [`testakte-beamtenrecht-auslandseinsatz-mexiko-wasserbau-besoldung-einzelpdfs.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/akten-v445.35.3/testakte-beamtenrecht-auslandseinsatz-mexiko-wasserbau-besoldung-einzelpdfs.zip) |
+| [Landesamt Weserbrücke - Beförderungskaskade und Wunschkandidat](../testakten/beamtenrecht-befoerderungskaskade-landesamt-weserbruecke/README.md) | [Gesamt-PDF](../testakten/beamtenrecht-befoerderungskaskade-landesamt-weserbruecke/gesamt-pdf/beamtenrecht-befoerderungskaskade-landesamt-weserbruecke_gesamt.pdf) | [`testakte-beamtenrecht-befoerderungskaskade-landesamt-weserbruecke.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/grundakten-sammlung-v1.0.0/testakte-beamtenrecht-befoerderungskaskade-landesamt-weserbruecke.zip) | [`testakte-beamtenrecht-befoerderungskaskade-landesamt-weserbruecke-einzelpdfs.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/akten-v445.35.3/testakte-beamtenrecht-befoerderungskaskade-landesamt-weserbruecke-einzelpdfs.zip) |
+| [Hafenpolizei - Dienstunfall, Burnout und Wiedereingliederung](../testakten/beamtenrecht-dienstunfall-burnout-wiedereingliederung-hafenpolizei/README.md) | [Gesamt-PDF](../testakten/beamtenrecht-dienstunfall-burnout-wiedereingliederung-hafenpolizei/gesamt-pdf/beamtenrecht-dienstunfall-burnout-wiedereingliederung-hafenpolizei_gesamt.pdf) | [`testakte-beamtenrecht-dienstunfall-burnout-wiedereingliederung-hafenpolizei.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/grundakten-sammlung-v1.0.0/testakte-beamtenrecht-dienstunfall-burnout-wiedereingliederung-hafenpolizei.zip) | [`testakte-beamtenrecht-dienstunfall-burnout-wiedereingliederung-hafenpolizei-einzelpdfs.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/akten-v445.35.3/testakte-beamtenrecht-dienstunfall-burnout-wiedereingliederung-hafenpolizei-einzelpdfs.zip) |
+| [Dr. Ottilie Mondsee und die verschwundene R-Besoldung](../testakten/beamtenrecht-richterlaufbahn-besoldung-mondsee/README.md) | [Gesamt-PDF](../testakten/beamtenrecht-richterlaufbahn-besoldung-mondsee/gesamt-pdf/beamtenrecht-richterlaufbahn-besoldung-mondsee_gesamt.pdf) | [`testakte-beamtenrecht-richterlaufbahn-besoldung-mondsee.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/grundakten-sammlung-v1.0.0/testakte-beamtenrecht-richterlaufbahn-besoldung-mondsee.zip) | [`testakte-beamtenrecht-richterlaufbahn-besoldung-mondsee-einzelpdfs.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/akten-v445.35.3/testakte-beamtenrecht-richterlaufbahn-besoldung-mondsee-einzelpdfs.zip) |
+| [Schulleitung Gymnasium am Maschsee-Nord Hannover - Konkurrentenstreit](../testakten/beamtenrecht-schulleitung-hannover-konkurrentenstreit/README.md) | [Gesamt-PDF](../testakten/beamtenrecht-schulleitung-hannover-konkurrentenstreit/gesamt-pdf/beamtenrecht-schulleitung-hannover-konkurrentenstreit_gesamt.pdf) | [`testakte-beamtenrecht-schulleitung-hannover-konkurrentenstreit.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/grundakten-sammlung-v1.0.0/testakte-beamtenrecht-schulleitung-hannover-konkurrentenstreit.zip) | [`testakte-beamtenrecht-schulleitung-hannover-konkurrentenstreit-einzelpdfs.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/akten-v445.35.3/testakte-beamtenrecht-schulleitung-hannover-konkurrentenstreit-einzelpdfs.zip) |
+| [BVG-Widerspruchsstelle — Abschleppen nach MobG BE](../testakten/bvg-widerspruchsstelle-abschleppen-mobg/README.md) | [Gesamt-PDF](../testakten/bvg-widerspruchsstelle-abschleppen-mobg/gesamt-pdf/bvg-widerspruchsstelle-abschleppen-mobg_gesamt.pdf) | [`testakte-bvg-widerspruchsstelle-abschleppen-mobg.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/grundakten-sammlung-v1.0.0/testakte-bvg-widerspruchsstelle-abschleppen-mobg.zip) | [`testakte-bvg-widerspruchsstelle-abschleppen-mobg-einzelpdfs.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/akten-v445.35.3/testakte-bvg-widerspruchsstelle-abschleppen-mobg-einzelpdfs.zip) |
+| [KDV-Verfahren Malte Eberhard Rabenow / Berlin-Köln 2026](../testakten/kriegsdienstverweigerung-gewissensantrag-berlin-2026/README.md) | [Gesamt-PDF](../testakten/kriegsdienstverweigerung-gewissensantrag-berlin-2026/gesamt-pdf/kriegsdienstverweigerung-gewissensantrag-berlin-2026_gesamt.pdf) | [`testakte-kriegsdienstverweigerung-gewissensantrag-berlin-2026.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/grundakten-sammlung-v1.0.0/testakte-kriegsdienstverweigerung-gewissensantrag-berlin-2026.zip) | [`testakte-kriegsdienstverweigerung-gewissensantrag-berlin-2026-einzelpdfs.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/akten-v445.35.3/testakte-kriegsdienstverweigerung-gewissensantrag-berlin-2026-einzelpdfs.zip) |
+| [Initiative Lausitzer Lebensraum e.V. ./. Polizeipräsidium Cottbus (Polizeiverfügung Anti-Kohle-Versammlung Forst Lausitz)](../testakten/polizeiverfuegung-versammlung-anti-kohle-pohlmann-forst-lausitz/README.md) | [Gesamt-PDF](../testakten/polizeiverfuegung-versammlung-anti-kohle-pohlmann-forst-lausitz/gesamt-pdf/polizeiverfuegung-versammlung-anti-kohle-pohlmann-forst-lausitz_gesamt.pdf) | [`testakte-polizeiverfuegung-versammlung-anti-kohle-pohlmann-forst-lausitz.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/grundakten-sammlung-v1.0.0/testakte-polizeiverfuegung-versammlung-anti-kohle-pohlmann-forst-lausitz.zip) | [`testakte-polizeiverfuegung-versammlung-anti-kohle-pohlmann-forst-lausitz-einzelpdfs.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/akten-v445.35.3/testakte-polizeiverfuegung-versammlung-anti-kohle-pohlmann-forst-lausitz-einzelpdfs.zip) |
+| [Akte Lindenhof-Gymnasium - Inklusion, Ordnungsmaßnahme und Schulwechsel](../testakten/schulrecht-inklusion-ordnungsmasnahme-schulwechsel-lindenhof/README.md) | [Gesamt-PDF](../testakten/schulrecht-inklusion-ordnungsmasnahme-schulwechsel-lindenhof/gesamt-pdf/schulrecht-inklusion-ordnungsmasnahme-schulwechsel-lindenhof_gesamt.pdf) | [`testakte-schulrecht-inklusion-ordnungsmasnahme-schulwechsel-lindenhof.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/grundakten-sammlung-v1.0.0/testakte-schulrecht-inklusion-ordnungsmasnahme-schulwechsel-lindenhof.zip) | [`testakte-schulrecht-inklusion-ordnungsmasnahme-schulwechsel-lindenhof-einzelpdfs.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/akten-v445.35.3/testakte-schulrecht-inklusion-ordnungsmasnahme-schulwechsel-lindenhof-einzelpdfs.zip) |
+| [Lindenhof Vorrat in Münster](../testakten/strassennutzung-poller-lieferzufahrt-lindenhof-muenster/README.md) | [Gesamt-PDF](../testakten/strassennutzung-poller-lieferzufahrt-lindenhof-muenster/gesamt-pdf/strassennutzung-poller-lieferzufahrt-lindenhof-muenster_gesamt.pdf) | [`testakte-strassennutzung-poller-lieferzufahrt-lindenhof-muenster.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/grundakten-sammlung-v1.0.0/testakte-strassennutzung-poller-lieferzufahrt-lindenhof-muenster.zip) | [`testakte-strassennutzung-poller-lieferzufahrt-lindenhof-muenster-einzelpdfs.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/akten-v445.35.3/testakte-strassennutzung-poller-lieferzufahrt-lindenhof-muenster-einzelpdfs.zip) |
+| [Windpark-Drittanfechtung Bürgerinitiative Uckermark](../testakten/windpark-drittanfechtung-buergerinitiative-uckermark/README.md) | [Gesamt-PDF](../testakten/windpark-drittanfechtung-buergerinitiative-uckermark/gesamt-pdf/windpark-drittanfechtung-buergerinitiative-uckermark_gesamt.pdf) | [`testakte-windpark-drittanfechtung-buergerinitiative-uckermark.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/grundakten-sammlung-v1.0.0/testakte-windpark-drittanfechtung-buergerinitiative-uckermark.zip) | [`testakte-windpark-drittanfechtung-buergerinitiative-uckermark-einzelpdfs.zip`](https://github.com/Klotzkette/claude-fuer-deutsches-recht/releases/download/akten-2-v445.35.3/testakte-windpark-drittanfechtung-buergerinitiative-uckermark-einzelpdfs.zip) |
+
+[Alle Testakten und Fachzuordnungen](../testakten/README.md)
+<!-- END direkt-loslegen (autogen) -->
+
+## 1. Schwerpunkt: Fördermittelrückforderung und Zweckbindung
+
+Für Teilwiderruf und Rückforderung verbindet der Schwerpunkt Bescheidkette, Zweckbindung, Verwendungsbelege und behördliche Kenntnis. Er eignet sich wegen der aufwendigen Belegprüfung und des unmittelbaren Liquiditätsrisikos einschließlich Zinsen.
+
+[Schwerpunkt-Skill](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/foerdermittel-zweckbindung-belegabgleich-rueckforderung/SKILL.md) · <a href="https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/fachanwalt-verwaltungsrecht-hauptproblem.md" download>Eigenständigen Hauptproblem-Prompt als Markdown herunterladen</a>
+Wenn du das hier öffnest, willst du einen Verwaltungsakt anfechten und vorläufigen Rechtsschutz erreichen.
+Plugin Fachanwalt für Verwaltungsrecht. Orientierung VwGO VwVfG Bundesland-VwVfG. Anfechtungs- und Verpflichtungsklage Eilrechtsschutz Normenkontrolle Polizei- und Ordnungsrecht. Schnittstellen Migrations- und Sozialrecht.
+
+## Installation in der Plugin-Umgebung
+
+1. ZIP herunterladen (Link oben).
+2. Plugin-Menü öffnen, `Upload plugin` wählen und die Datei auswählen.
+3. Plugin aktivieren und eine neue Aufgabe öffnen; den passenden Skill ausdrücklich auswählen.
+
+> **Hinweis:** Für den ZIP-Upload muss das Archiv direkt `.claude-plugin/plugin.json`, `skills/`, `assets/` und `references/` im ZIP-Root enthalten. **Nicht** das komplette Repository-ZIP aus "Code → Download ZIP" verwenden.
+
+## Enthaltene Skills
+
+| Skill | Zweck |
+| --- | --- |
+| `allgemein` | Einstieg, Schnelltriage und Workflow-Routing im Fachanwalt Verwaltungsrecht-Plugin. |
+| `eilantrag-80-abs-5-vwgo` | Eilantrag auf Wiederherstellung oder Anordnung aufschiebender Wirkung nach § 80 Abs. 5 VwGO. |
+| `energieanlagen-bimschg-genehmigung-verfahren` | BImSchG-Genehmigung für Energieanlagen begleiten. |
+| `energietrassen-planfeststellung-rechtsschutz` | Rechtsschutz gegen Planfeststellungsbeschluss für Strom- und Gastraßen. |
+| `erstgespraech-mandatsannahme` | Strukturierter Erstgesprächsleitfaden für Verwaltungs- und Bauplanungsrecht. |
+| `fa-vwgo-widerspruchsbescheid-abschleppen-oepnv` | Widerspruchsbescheid der ÖPNV-Widerspruchsstelle gegen Gebührenbescheid wegen Umsetzung/Abschleppen nach § 23 MobG BE. |
+| `fachanwalt-verwaltungsrecht-anfechtungsklage` | Anfechtungsklage nach § 42 Abs. 1 VwGO gegen Verwaltungsakt. |
+| `fachanwalt-verwaltungsrecht-beamten-disziplinarverfahren` | Beamten-Disziplinarverfahren führen oder verteidigen. |
+| `fachanwalt-verwaltungsrecht-drittanfechtung-umwelt` | Drittanfechtung umweltrechtlicher Genehmigungen durch Nachbarn oder Umweltverband. |
+| `fachanwalt-verwaltungsrecht-einstweiliger-rechtsschutz` | Einstweiliger Rechtsschutz nach § 80 Abs. 5 VwGO oder § 123 VwGO. |
+| `fachanwalt-verwaltungsrecht-klimaklage-bundeslaender-ksg-bverfg` | Klimaklage gegen Bundesländer oder Bund nach KSG und BVerfG-Klimabeschluss. |
+| `fachanwalt-verwaltungsrecht-normenkontrolle-47-vwgo` | Normenkontrollantrag nach § 47 VwGO gegen Bauleitpläne, Rechtsverordnungen oder Satzungen. |
+| `fachanwalt-verwaltungsrecht-orientierung` | Orientierung im Fachanwaltsrecht Verwaltungsrecht. |
+| `fachanwalt-verwaltungsrecht-vergleich-106-vwgo-behoerde` | Verwaltungsrechts-Vergleich nach § 106 VwGO und öffentlich-rechtlicher Vertrag nach § 55 VwVfG. |
+| `fachanwalt-verwaltungsrecht-widerspruchsschrift` | Widerspruchsschrift nach §§ 68 ff. VwGO gegen belastenden Verwaltungsakt. |
+| `mandat-triage-verwaltungsrecht` | Eingangs-Triage für verwaltungsrechtliche Mandate. |
+| `schriftsatzkern-substantiierung` | Substantiierten Schriftsatzkern für verwaltungsrechtliche Klagen und Anträge erstellen. |
+| `vergleichsverhandlung-strategie` | Vergleichsverhandlungs-Strategie für Verwaltungsrechtsstreitigkeiten. |
+| `widerspruch-oder-klage-erstpruefung` | Entscheidung Widerspruch vs. direkte Klage nach Bescheiderhalt. |
+
+## Lizenz
+
+Apache-2.0 OR MIT — Auswahl beim Empfänger.
+
+<!-- BEGIN FACHMODULE-NAVIGATION -->
+
+Das Plugin bietet **11 auswählbare Skills**. Die **80 vollständigen Fachmodule** und ihre Hilfsdateien bleiben in der [Fachbibliothek](FACHMODULE.md) zugänglich. Wählen Sie den Arbeitsweg nach dem gewünschten Ergebnis; er führt zu den passenden Vertiefungen.
+
+<!-- END FACHMODULE-NAVIGATION -->
+
+<!-- BEGIN SKILLS-LOGIC (auto-generated) -->
+
+## Orientierung nach Arbeitslogik
+
+Diese Navigation ordnet die Skills nach typischen Arbeitsschritten. Ein Klick auf einen Skill lädt seine Markdown-Datei; die alphabetische Komplettliste bleibt darunter erhalten.
+
+English: Skills are grouped by typical work phase. Clicking a skill downloads its Markdown file; the complete alphabetical list remains below.
+
+| Arbeitsphase | Typische Skills |
+| --- | --- |
+| 1. Auftrag und bewährte Fachwerkzeuge | [`einstieg-routing`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/einstieg-routing/SKILL.md), [`foerdermittel-zweckbindung-belegabgleich-rueckforderung`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/foerdermittel-zweckbindung-belegabgleich-rueckforderung/SKILL.md), [`juristischer-argumentationskern`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/juristischer-argumentationskern/SKILL.md), [`workflow-kaltstart-und-routing`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/workflow-kaltstart-und-routing/SKILL.md) |
+| 2. Verwaltungshandeln | [`verwaltungshandeln-bearbeiten`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/verwaltungshandeln-bearbeiten/SKILL.md) |
+| 3. Zulaessigkeit | [`zulaessigkeit-bearbeiten`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/zulaessigkeit-bearbeiten/SKILL.md) |
+| 4. Materielle Rechtmaessigkeit | [`materielle-rechtmaessigkeit-bearbeiten`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/materielle-rechtmaessigkeit-bearbeiten/SKILL.md) |
+| 5. Eilrechtsschutz | [`eilrechtsschutz-bearbeiten`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/eilrechtsschutz-bearbeiten/SKILL.md) |
+| 6. Arbeitsprodukt | [`arbeitsprodukt-bearbeiten`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/arbeitsprodukt-bearbeiten/SKILL.md) |
+| 7. Unterlagen und Quellen auswerten | [`unterlagen-und-quellen-auswerten-bearbeiten`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/unterlagen-und-quellen-auswerten-bearbeiten/SKILL.md) |
+| 8. Arbeitsprodukt ausarbeiten und kontrollieren | [`arbeitsprodukt-ausarbeiten-und-kontrollieren-bearbeiten`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/arbeitsprodukt-ausarbeiten-und-kontrollieren-bearbeiten/SKILL.md) |
+
+<!-- END SKILLS-LOGIC (auto-generated) -->
+
+<!-- BEGIN SKILLS-OVERVIEW (auto-generated) -->
+
+## Alle Skills im Überblick
+
+Automatisch generierte Komplett-Liste aller 11 Skills in diesem Plugin. Jeder Skillname und der Downloadlink laden den unveränderten Inhalt der zugehörigen `SKILL.md` als Markdown-Datei. Der eindeutige Dateiname enthält Plugin und Skill; Beschreibungen stammen aus dem jeweiligen `description`-Feld.
+
+English: Complete list of all 11 skills in this plugin. Both links in each row download the unchanged `SKILL.md` content as a Markdown file with a unique plugin-and-skill filename.
+
+| Skill | Beschreibung | Markdown-Download |
+| --- | --- | --- |
+| [`arbeitsprodukt-ausarbeiten-und-kontrollieren-bearbeiten`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/arbeitsprodukt-ausarbeiten-und-kontrollieren-bearbeiten/SKILL.md) | Für Verwaltungsrecht: Arbeitsprodukt ausarbeiten und kontrollieren: Den verlangten Text oder die Berechnung fertigstellen, Gegenposition, Quellenstatus und offene Punkte prüfen und die nächste Handlung erklären. Vollständige Fachanweisun... | [MD herunterladen / Download MD](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/arbeitsprodukt-ausarbeiten-und-kontrollieren-bearbeiten/SKILL.md) |
+| [`arbeitsprodukt-bearbeiten`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/arbeitsprodukt-bearbeiten/SKILL.md) | Für Verwaltungsrecht: Arbeitsprodukt: Widerspruch, Klage, Eilantrag, Bescheidprüfung oder Vergleichsvorschlag erstellen. Vollständige Fachanweisungen und lokale Vorlagen werden gezielt nach dem konkreten Auftrag eingesetzt. | [MD herunterladen / Download MD](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/arbeitsprodukt-bearbeiten/SKILL.md) |
+| [`eilrechtsschutz-bearbeiten`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/eilrechtsschutz-bearbeiten/SKILL.md) | Für Verwaltungsrecht: Eilrechtsschutz: aufschiebende Wirkung, Vollziehungsinteresse, Folgenabwaegung und Sicherungsanordnung strukturieren. Vollständige Fachanweisungen und lokale Vorlagen werden gezielt nach dem konkreten Auftrag einges... | [MD herunterladen / Download MD](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/eilrechtsschutz-bearbeiten/SKILL.md) |
+| [`einstieg-routing`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/einstieg-routing/SKILL.md) | Für Einstieg und Routing: routet Rolle, Frist, Unterlagen und Fachschritt; Ergebnis: Prüfprodukt mit Risiko und nächstem Schritt. Fachgebiet: Fachanwalt Verwaltungsrecht. | [MD herunterladen / Download MD](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/einstieg-routing/SKILL.md) |
+| [`foerdermittel-zweckbindung-belegabgleich-rueckforderung`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/foerdermittel-zweckbindung-belegabgleich-rueckforderung/SKILL.md) | Prüft Fördermittelrückforderungen durch Abgleich von Bewilligungszweck, Nebenbestimmungen, Verwendungsbelegen und behördlichem Kenntnisstand. Liefert eine Rückforderungsrechnung und begründete Abwehr; nicht für Förderanträge oder reine V... | [MD herunterladen / Download MD](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/foerdermittel-zweckbindung-belegabgleich-rueckforderung/SKILL.md) |
+| [`juristischer-argumentationskern`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/juristischer-argumentationskern/SKILL.md) | Verwaltungsmandat vom Bescheid bis zum passenden Rechtsbehelf führen. Verarbeitet vorhandene Unterlagen, prüft entscheidende Fachfragen und führt den Auftrag zum vollständig formulierten Ergebnis. | [MD herunterladen / Download MD](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/juristischer-argumentationskern/SKILL.md) |
+| [`materielle-rechtmaessigkeit-bearbeiten`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/materielle-rechtmaessigkeit-bearbeiten/SKILL.md) | Für Verwaltungsrecht: Materielle Rechtmäßigkeit: Ermächtigungsgrundlage, formelle Fehler, Tatbestand, Ermessen und Verhältnismäßigkeit prüfen. Vollständige Fachanweisungen und lokale Vorlagen werden gezielt nach dem konkreten Auftrag ein... | [MD herunterladen / Download MD](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/materielle-rechtmaessigkeit-bearbeiten/SKILL.md) |
+| [`unterlagen-und-quellen-auswerten-bearbeiten`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/unterlagen-und-quellen-auswerten-bearbeiten/SKILL.md) | Für Verwaltungsrecht: Unterlagen und Quellen auswerten: Akte, Belege, Chronologie, Recherche und entscheidende Lücken für den konkreten Fachauftrag nachvollziehbar erschließen. Vollständige Fachanweisungen und lokale Vorlagen werden gezi... | [MD herunterladen / Download MD](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/unterlagen-und-quellen-auswerten-bearbeiten/SKILL.md) |
+| [`verwaltungshandeln-bearbeiten`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/verwaltungshandeln-bearbeiten/SKILL.md) | Für Verwaltungsrecht: Verwaltungshandeln: Verwaltungsakt, Realakt, Satzung, Nebenbestimmung oder Vollstreckung erkennen. Vollständige Fachanweisungen und lokale Vorlagen werden gezielt nach dem konkreten Auftrag eingesetzt. | [MD herunterladen / Download MD](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/verwaltungshandeln-bearbeiten/SKILL.md) |
+| [`workflow-kaltstart-und-routing`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/workflow-kaltstart-und-routing/SKILL.md) | Für Kaltstart und Routing: routet Rolle, Frist, Unterlagen und Fachschritt; Ergebnis: Prüfprodukt mit Risiko und nächstem Schritt. Fachgebiet: Fachanwalt Verwaltungsrecht. | [MD herunterladen / Download MD](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/workflow-kaltstart-und-routing/SKILL.md) |
+| [`zulaessigkeit-bearbeiten`](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/zulaessigkeit-bearbeiten/SKILL.md) | Für Verwaltungsrecht: Zulässigkeit: Statthafte Klageart, Klagebefugnis, Vorverfahren, Frist und Gericht bestimmen. Vollständige Fachanweisungen und lokale Vorlagen werden gezielt nach dem konkreten Auftrag eingesetzt. | [MD herunterladen / Download MD](https://klotzkette.github.io/claude-fuer-deutsches-recht/download.html?path=fachanwalt-verwaltungsrecht/skills/zulaessigkeit-bearbeiten/SKILL.md) |
+
+<!-- END SKILLS-OVERVIEW (auto-generated) -->
